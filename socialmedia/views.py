@@ -152,12 +152,9 @@ def friend_request(request):
             print("---------------------------------------------")
             return JsonResponse({"success": False, "errors": e}, status=400)
     if request.method == "GET":
-        senderProfile = UserProfile.objects.get(
-            email=request.GET.get("action_to"))
         receiverProfile = UserProfile.objects.get(
             email=request.user.email)
-        friend_requests = FriendRequest.objects.filter(
-            sender=senderProfile, receiver=receiverProfile)
+        friend_requests = FriendRequest.objects.filter(receiver=receiverProfile)
         serialized_requests = [
             {'from': friends.sender.name, 'status': friends.status} for friends in friend_requests if friends.status == "pending"]
         return JsonResponse({"success": True, "friend_requests": serialized_requests}, status=200)
@@ -193,7 +190,7 @@ def search_users(request):
         try:
             error = False
             params = request.GET
-            search_by = params.get('search_by', '')
+            search_by = params.get('search_by', 'name')
             page_number = params.get('page', 1)
             query = params.get('query', '')
             if params:
@@ -208,7 +205,7 @@ def search_users(request):
                     serialized_users = [
                         {'id': user.id, 'name': user.name} for user in page]
 
-                    return JsonResponse({"success": True, "users": serialized_users, "total_pages": paginator.num_pages}, status=200)
+                    return JsonResponse({"success": True, "users": serialized_users, "total_pages": paginator.num_pages,"page": int(page_number)}, status=200)
 
                 elif search_by == "email":
                     try:

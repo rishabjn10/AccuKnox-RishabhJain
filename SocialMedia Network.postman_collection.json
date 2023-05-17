@@ -13,7 +13,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"email\":\"rj6@gmail.in\",\r\n\"password\":\"1234\",\r\n\"confirm_password\":\"1234\",\r\n\"name\":\"user 6\",\r\n\"gender\":\"M\"}",
+					"raw": "{\"email\":\"RJ16@gmail.in\",\r\n\"password\":\"1234\",\r\n\"confirm_password\":\"1234\",\r\n\"name\":\"user 16\",\r\n\"gender\":\"M\"}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -32,7 +32,78 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Create User",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"email\":\"RJ16@gmail.in\",\r\n\"password\":\"1234\",\r\n\"confirm_password\":\"1234\",\r\n\"name\":\"user 16\",\r\n\"gender\":\"M\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/create_user/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"create_user",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "gunicorn"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 17 May 2023 08:45:05 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "65"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"User profile created successfully\"\n}"
+				}
+			]
 		},
 		{
 			"name": "Search Users",
@@ -40,7 +111,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8000/search_users/?search_by=email&query=rj&page=2",
+					"raw": "localhost:8000/search_users/?page=1",
 					"host": [
 						"localhost"
 					],
@@ -52,20 +123,103 @@
 					"query": [
 						{
 							"key": "search_by",
-							"value": "email"
+							"value": "name",
+							"disabled": true
 						},
 						{
 							"key": "query",
-							"value": "rj"
+							"value": "rj2@gmail.in",
+							"disabled": true
 						},
 						{
 							"key": "page",
-							"value": "2"
+							"value": "1"
 						}
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Search Users",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/search_users/?search_by=name&page=1",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"search_users",
+								""
+							],
+							"query": [
+								{
+									"key": "search_by",
+									"value": "name"
+								},
+								{
+									"key": "query",
+									"value": "rj2@gmail.in",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "gunicorn"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 17 May 2023 08:47:59 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "350"
+						},
+						{
+							"key": "Vary",
+							"value": "Cookie"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"users\": [\n        {\n            \"id\": 1,\n            \"name\": \"user 1\"\n        },\n        {\n            \"id\": 10,\n            \"name\": \"user 10\"\n        },\n        {\n            \"id\": 11,\n            \"name\": \"user 11\"\n        },\n        {\n            \"id\": 12,\n            \"name\": \"user 12\"\n        },\n        {\n            \"id\": 13,\n            \"name\": \"user 13\"\n        },\n        {\n            \"id\": 14,\n            \"name\": \"user 14\"\n        },\n        {\n            \"id\": 15,\n            \"name\": \"user 15\"\n        },\n        {\n            \"id\": 16,\n            \"name\": \"user 16\"\n        },\n        {\n            \"id\": 2,\n            \"name\": \"user 2\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"user 3\"\n        }\n    ],\n    \"total_pages\": 2\n}"
+				}
+			]
 		},
 		{
 			"name": "Login user",
@@ -74,7 +228,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\"username\":\"rj3@gmail.in\",\r\n\"password\":\"1234\"}",
+					"raw": "{\"username\":\"Rj3@gmail.in\",\r\n\"password\":\"1234\"}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -94,7 +248,91 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Login user",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"username\":\"Rj@gmail.in\",\r\n\"password\":\"1234\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/accounts/login/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"accounts",
+								"login",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "gunicorn"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 17 May 2023 08:46:32 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Vary",
+							"value": "Cookie"
+						},
+						{
+							"key": "Content-Length",
+							"value": "31"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Set-Cookie",
+							"value": "csrftoken=CCuxprECpP0di17QNkD5075cziw9BPT2; expires=Wed, 15 May 2024 08:46:32 GMT; Max-Age=31449600; Path=/; SameSite=Lax"
+						},
+						{
+							"key": "Set-Cookie",
+							"value": "sessionid=w04rbcu6kvf0rpb50kt68in6oj0p1wjp; expires=Wed, 31 May 2023 08:46:32 GMT; HttpOnly; Max-Age=1209600; Path=/; SameSite=Lax"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Login successful\"\n}"
+				}
+			]
 		},
 		{
 			"name": "Send friend request",
@@ -103,7 +341,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"action_to\":\"rj4@gmail.in\"\r\n}",
+					"raw": "{\r\n    \"action_to\":\"rj6@gmail.in\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -123,7 +361,83 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Send friend request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"action_to\":\"rj6@gmail.in\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/friend_request/send/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"friend_request",
+								"send",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "gunicorn"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 17 May 2023 08:48:50 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "64"
+						},
+						{
+							"key": "Vary",
+							"value": "Cookie"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Friend request sent successfully\"\n}"
+				}
+			]
 		},
 		{
 			"name": "Accept/ Reject friend request",
@@ -140,7 +454,7 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8000/friend_request/accept_reject/?action_to=rj2@gmail.in",
+					"raw": "localhost:8000/friend_request/accept_reject/?action_to=rj@gmail.in",
 					"host": [
 						"localhost"
 					],
@@ -153,12 +467,94 @@
 					"query": [
 						{
 							"key": "action_to",
-							"value": "rj2@gmail.in"
+							"value": "rj@gmail.in"
 						}
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Accept/ Reject friend request",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"action\":\"accepted\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/friend_request/accept_reject/?action_to=rj@gmail.in",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"friend_request",
+								"accept_reject",
+								""
+							],
+							"query": [
+								{
+									"key": "action_to",
+									"value": "rj@gmail.in"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "gunicorn"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 17 May 2023 08:50:40 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "77"
+						},
+						{
+							"key": "Vary",
+							"value": "Cookie"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Friend request accepted/rejected successfully\"\n}"
+				}
+			]
 		},
 		{
 			"name": "Get friend requests",
@@ -178,7 +574,7 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8000/friend_request/accept_reject/?action_to=rj2@gmail.in",
+					"raw": "localhost:8000/friend_request/accept_reject/",
 					"host": [
 						"localhost"
 					],
@@ -187,16 +583,86 @@
 						"friend_request",
 						"accept_reject",
 						""
-					],
-					"query": [
-						{
-							"key": "action_to",
-							"value": "rj2@gmail.in"
-						}
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Get friend requests",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/friend_request/accept_reject/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"friend_request",
+								"accept_reject",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "gunicorn"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 17 May 2023 08:56:05 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "79"
+						},
+						{
+							"key": "Vary",
+							"value": "Cookie"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"friend_requests\": [\n        {\n            \"from\": \"user 1\",\n            \"status\": \"pending\"\n        }\n    ]\n}"
+				}
+			]
 		},
 		{
 			"name": "Get friends",
@@ -228,7 +694,83 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Get friends",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/friend_request/list/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"friend_request",
+								"list",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "gunicorn"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 17 May 2023 08:54:14 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "46"
+						},
+						{
+							"key": "Vary",
+							"value": "Cookie"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"friends\": [\n        \"rj2@gmail.in\"\n    ]\n}"
+				}
+			]
 		}
 	]
 }
