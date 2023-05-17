@@ -1,0 +1,234 @@
+{
+	"info": {
+		"_postman_id": "3e5f0eab-2b0c-4dc9-9f56-724451026e4e",
+		"name": "SocialMedia Network",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24806062"
+	},
+	"item": [
+		{
+			"name": "Create User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"email\":\"rj6@gmail.in\",\r\n\"password\":\"1234\",\r\n\"confirm_password\":\"1234\",\r\n\"name\":\"user 6\",\r\n\"gender\":\"M\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/create_user/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"create_user",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/search_users/?search_by=email&query=rj&page=2",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"search_users",
+						""
+					],
+					"query": [
+						{
+							"key": "search_by",
+							"value": "email"
+						},
+						{
+							"key": "query",
+							"value": "rj"
+						},
+						{
+							"key": "page",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"username\":\"rj3@gmail.in\",\r\n\"password\":\"1234\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/accounts/login/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"accounts",
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send friend request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"action_to\":\"rj4@gmail.in\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/friend_request/send/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"friend_request",
+						"send",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Accept/ Reject friend request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"action\":\"accepted\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/friend_request/accept_reject/?action_to=rj2@gmail.in",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"friend_request",
+						"accept_reject",
+						""
+					],
+					"query": [
+						{
+							"key": "action_to",
+							"value": "rj2@gmail.in"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get friend requests",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/friend_request/accept_reject/?action_to=rj2@gmail.in",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"friend_request",
+						"accept_reject",
+						""
+					],
+					"query": [
+						{
+							"key": "action_to",
+							"value": "rj2@gmail.in"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get friends",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/friend_request/list/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"friend_request",
+						"list",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
